@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_BUILD_ENV=${REACT_APP_BUILD_ENV}
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - REACT_APP_BUILD_ENV=${REACT_APP_BUILD_ENV}
+      - PORT=${PORT}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true

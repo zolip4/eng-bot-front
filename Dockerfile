@@ -10,9 +10,6 @@ RUN npm install --save-dev sass
 
 COPY . ./
 
-ARG REACT_APP_BUILD_ENV=production
-ARG PORT=3000
-
 RUN if [ "$REACT_APP_BUILD_ENV" = "production" ]; then npm run build; fi
 
 FROM node:16 as runtime

@@ -4,6 +4,7 @@ import Magento from "./Content/Magento";
 import SymfonyLogo from "./Content/Symfony";
 import ShopwareLogo from "./Content/Shopware";
 import WPLogo from "./Content/WP";
+import YiiLogo from "./Content/Yii";
 
 interface Technology {
     name: string;
@@ -16,7 +17,7 @@ const technologies: Technology[] = [
     { name: 'Magento 2', years: '5 years', projects: '10+ projects', Component: Magento },
     { name: 'Symfony', years: '2 years', projects: '3 projects', Component: SymfonyLogo },
     { name: 'Shopware', years: '1 year', projects: '1 project', Component: ShopwareLogo },
-    { name: 'Yii2', years: '2 years', projects: '5 projects', Component: Magento },
+    { name: 'Yii2', years: '2 years', projects: '5 projects', Component: YiiLogo },
     { name: 'WordPress', years: '2 years', projects: '7 projects', Component: WPLogo },
 ];
 

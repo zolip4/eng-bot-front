@@ -8,10 +8,10 @@ services:
       args:
         - REACT_APP_BUILD_ENV=${REACT_APP_BUILD_ENV}
     ports:
-      - "${PORT}:${PORT}"
+      - "${REACT_APP_PORT}:${REACT_APP_PORT}"
     environment:
       - REACT_APP_BUILD_ENV=${REACT_APP_BUILD_ENV}
-      - PORT=${PORT}
+      - REACT_APP_PORT=${REACT_APP_PORT}
     volumes:
       - .:/app
       - /app/node_modules

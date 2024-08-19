@@ -1,25 +1,35 @@
+# Stage 1: Базовый образ и установка зависимостей
 FROM node:16-alpine as build
 
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
+# Копируем package.json и package-lock.json
 COPY package.json package-lock.json ./
 
-RUN npm install
+# Устанавливаем зависимости, включая SASS
+RUN npm install && npm install --save-dev sass
 
-RUN npm install --save-dev sass
-
+# Копируем остальной код приложения
 COPY . ./
 
-ARG REACT_APP_BUILD_ENV
-RUN if [ "$REACT_APP_BUILD_ENV" = "production" ]; then npm run build; fi
+# Сборка приложения
+RUN npm run build
 
-FROM node:16-alpine as runtime
+# Stage 2: Продакшн-среда с использованием NGINX
+FROM nginx:alpine
 
-WORKDIR /app
+# Удаляем стандартный конфиг NGINX
+RUN rm /etc/nginx/conf.d/default.conf
 
-COPY --from=build /app ./
+# Копируем пользовательский конфиг NGINX
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-ENV PORT=80
-EXPOSE ${PORT}
+# Копируем результаты сборки из предыдущего этапа
+COPY --from=build /app/build /usr/share/nginx/html
 
-CMD if [ "$REACT_APP_BUILD_ENV" = "production" ]; then npm install -g serve && serve -s build -l ${PORT}; else npm start; fi
+# Открываем порт 80
+EXPOSE 80
+
+# Запускаем NGINX
+CMD ["nginx", "-g", "daemon off;"]

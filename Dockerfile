@@ -9,7 +9,7 @@ RUN npm install
 
 COPY . ./
 
-ARG REACT_APP_BUILD_ENV=production33
+ARG REACT_APP_BUILD_ENV=production
 
 # If the REACT_APP_BUILD_ENV is set to production, run the build command
 RUN if [ "$REACT_APP_BUILD_ENV" = "production" ]; then npm run build; fi

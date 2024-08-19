@@ -1,0 +1,31 @@
+// Header.scss
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px;
+  .tabs {
+    display: flex;
+    margin-bottom: 20px;
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 0 10px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-bottom: 2px solid #007bff;
+      }
+
+      &.active {
+        border-bottom: 2px solid #007bff;
+        color: #007bff;
+        font-weight: bold;
+      }
+    }
+  }
+}

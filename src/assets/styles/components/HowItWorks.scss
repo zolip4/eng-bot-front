@@ -1,0 +1,54 @@
+.how-it-works {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+      font-size: 2em;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .scheme {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+
+      .part {
+        max-width: 200px;
+        padding: 10px;
+
+        h3 {
+          font-size: 1.5em;
+          color: #007bff;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 1em;
+          color: #6c757d;
+        }
+      }
+
+      .arrow {
+        font-size: 2em;
+        color: #007bff;
+        margin: 0 20px;
+      }
+    }
+
+    .diagram {
+      margin-top: 40px;
+
+      svg {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

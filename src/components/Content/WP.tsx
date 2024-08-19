@@ -3,8 +3,9 @@ import React from 'react';
 const WPLogo: React.FC = () => {
     return (
         <svg
-            width="128" height="128"
-            viewBox="0 0 24 24"
+            width="200"
+            height="168"
+            viewBox="0 0 170 120"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
         >

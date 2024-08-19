@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/styles/components/HowItWorks.scss";
-import Scheme from "../assets/styles/components/Content/Scheme";
+import Scheme from "./Content/Scheme";
 
 const HowItWorks: React.FC = () => {
     return (

@@ -1,9 +1,9 @@
 import React from 'react';
 import '../assets/styles/components/TechnologiesSection.scss';
-import Magento from "../assets/styles/components/Content/Magento";
-import SymfonyLogo from "../assets/styles/components/Content/Symfony";
-import ShopwareLogo from "../assets/styles/components/Content/Shopware";
-import WPLogo from "../assets/styles/components/Content/WP";
+import Magento from "./Content/Magento";
+import SymfonyLogo from "./Content/Symfony";
+import ShopwareLogo from "./Content/Shopware";
+import WPLogo from "./Content/WP";
 
 interface Technology {
     name: string;
@@ -28,7 +28,7 @@ const TechnologiesSection: React.FC = () => {
                 {technologies.map((tech, index) => (
                     <div className="technology-card" key={index}>
                         <div className="technology-logo">
-                            <tech.Component />
+                            <tech.Component/>
                         </div>
                         <h4>{tech.name}</h4>
                         <p>{tech.years}</p>
@@ -36,6 +36,7 @@ const TechnologiesSection: React.FC = () => {
                     </div>
                 ))}
             </div>
+            <a href="/experience" className="view-more-button">View More</a>
         </div>
     );
 };

@@ -7,7 +7,6 @@ const Header: React.FC = () => {
         "About Me" : "/about",
         "Experience" : "/experience",
         "Blog" : "/blog",
-        "Projects" : "/projects",
         "Contact" : "/contacts",
     };
 

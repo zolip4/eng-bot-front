@@ -1,0 +1,56 @@
+.experience-tabs-section {
+  padding: 40px 20px;
+  text-align: center;
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+
+      &.active {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .tab-content {
+    margin-top: 20px;
+  }
+}
+
+.experience-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  max-width: 900px;
+
+  th, td {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+
+  td {
+    width: 100px;
+    height: 40px;
+
+    &.active {
+      background-color: #007bff;
+    }
+  }
+}

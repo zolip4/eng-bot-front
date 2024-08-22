@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     resolve: {
@@ -30,6 +32,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html',
             filename: 'index.html',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, 'src/assets/images'), to: 'images' },
+            ],
         }),
     ],
     mode: 'production',

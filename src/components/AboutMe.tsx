@@ -1,12 +1,13 @@
 import React from 'react';
 import '../assets/styles/components/AboutMe.scss';
+import profileImage from 'assets/images/profile.jpg';
 
 const AboutMe: React.FC = () => {
     return (
         <div className="about-me-section">
             <div className="content-wrapper">
                 <div className="profile-pic">
-                    <img src="/images/profile.jpg" alt="Profile" />
+                    <img src={profileImage} alt="Profile"/>
                 </div>
                 <div className="details">
                     <h2>About Me</h2>
